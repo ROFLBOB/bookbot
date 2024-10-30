@@ -28,10 +28,11 @@ def print_report(path, total_words, character_counts):
     
     print(f"--- Begin report of {path} ---")
     #get the total count of all words
-    print(f"There werd {total_words} words found in the document.")
+    print(f"There were {total_words} words found in the document.")
     #print how many times each character was found
-    for k, v in character_counts.items():
-        print(f"The character '{k}' was found {v} times")
+    for k, v in sorted(character_counts.items()):
+        if k.isalpha() == True:
+            print(f"The character '{k}' was found {v} times")
     
 
 main()
